@@ -2,7 +2,9 @@
   "name": "pp",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "show-trace": "npx playwright show-trace test-results/trace-file.zip"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

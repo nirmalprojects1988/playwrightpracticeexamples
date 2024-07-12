@@ -22,7 +22,7 @@ test.skip('Dismiss the Alert & print the alert text', async({page}) => {
     await page.waitForLoadState();
     await page.close();
 });
-test('Modern alert example', async({page}) => {
+test.skip('Modern alert example', async({page}) => {
     await page.goto('https://letcode.in/alert')
     await page.getByText('Modern Alert',{exact:true}).click();
     await page.waitForLoadState();
@@ -30,4 +30,15 @@ test('Modern alert example', async({page}) => {
     await page.getByLabel('close').click();
     await page.close();
     
+});
+
+test('Handle prompt alert', async ({ page }) => {
+   page.on('dialog', async dialog => {
+    console.log(dialog.type());
+    dialog.accept();
+    });
+    await page.goto('https://letcode.in/alert');
+    await page.getByText('Prompt Alert').click();
+    await page.close();
+
 });
