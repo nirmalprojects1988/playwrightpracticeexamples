@@ -18,7 +18,7 @@ test.skip('Interact with inner frame', async({page}) => {
 });
 test('intearct with frame by frame URL', async({page}) => {
     await page.goto('https://letcode.in/frame');
-   const parent= await page.frame({ url: /.*frame.*/ });
+  // const parent=page.frame({ url: /.*frame.*/ });
    const childframe=page.frame({url:/.*innerFrame.*/});
    childframe?.getByPlaceholder('Enter email')
     .fill('test@gmail.com');

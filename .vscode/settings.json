@@ -1,0 +1,6 @@
+{
+    "sonarlint.output.showAnalyzerLogs": false,
+    "sonarlint.analyzerProperties": {
+        
+    }
+}

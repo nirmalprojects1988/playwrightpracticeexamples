@@ -17,7 +17,7 @@ test.skip('Dismiss the Alert & print the alert text', async({page}) => {
         dialog.dismiss();
     })
     await page.goto('https://letcode.in/alert');
-    await page.getByText('Confirm Alert');
+    page.getByText('Confirm Alert');
     await page.evaluate(()=>alert('Are you happy with LetCode?'));
     await page.waitForLoadState();
     await page.close();
@@ -26,7 +26,7 @@ test.skip('Modern alert example', async({page}) => {
     await page.goto('https://letcode.in/alert')
     await page.getByText('Modern Alert',{exact:true}).click();
     await page.waitForLoadState();
-    expect(await page.getByText('Modern Alert - Some people address me as sweet alert as well ',{exact:true})).toHaveText('Modern Alert - Some people address me as sweet alert as well ');
+    expect(page.getByText('Modern Alert - Some people address me as sweet alert as well ',{exact:true})).toHaveText('Modern Alert - Some people address me as sweet alert as well ');
     await page.getByLabel('close').click();
     await page.close();
     

@@ -1,4 +1,4 @@
-import{test,expect,Browser} from "@playwright/test"
+import{test} from "@playwright/test"
 
 test.skip('New Window example', async({page}) => {
     await page.goto('https://demoqa.com/browser-windows');

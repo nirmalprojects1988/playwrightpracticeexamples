@@ -1,5 +1,5 @@
-import {test,expect} from "@playwright/test"
-import { log } from "console";
+import {test} from "@playwright/test"
+
 
 test.skip('Get place holder value by attribute',async ({page}) => {
 

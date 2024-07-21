@@ -1,4 +1,4 @@
-import{test,expect} from "@playwright/test"
+import{test} from "@playwright/test"
 
 test('get x and y cordinates', async({page}) => {
     await page.goto('https://letcode.in/buttons');
