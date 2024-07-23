@@ -2,7 +2,7 @@ import { test } from "@playwright/test"
 
 let cityName: string = 'Chennai';
 //this below code will print data from the table
-test.skip('get data from web table', async ({ page }) => {
+test('get data from web table', async ({ page }) => {
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
     let rows = await page.$$('//div[@class="tableFixHead"]//tbody//tr');
     for (let row of rows) {
@@ -18,7 +18,7 @@ test.skip('get data from web table', async ({ page }) => {
 //this below code will print data filter by city
 
 
-test.skip('print data those belong to chennai', async ({ page }) => {
+test('print data those belong to chennai', async ({ page }) => {
 
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
     const rows = await page.$$('//div[@class="tableFixHead"]//tbody//tr');
@@ -40,7 +40,7 @@ test.skip('print data those belong to chennai', async ({ page }) => {
 
 //this code will count of the city
 
-test.skip(`print count of the ${cityName} city `, async ({ page }) => {
+test(`print count of the ${cityName} city `, async ({ page }) => {
     let count: number = 0;
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
     const rows = await page.$$('//div[@class="tableFixHead"]//tbody//tr');

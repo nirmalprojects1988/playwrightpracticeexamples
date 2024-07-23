@@ -1,14 +1,14 @@
 import{test,expect} from "@playwright/test"
 
 //this code will print all values from the dropdown
-test.skip('Read drop-down value and print', async({page}) => {
+test('Read drop-down value and print', async({page}) => {
     await page.goto('https://letcode.in/dropdowns');
     const dropdown=page.locator('#lang');
     const values = await dropdown.allInnerTexts();
     values.forEach(value => console.log(value));
     
 });
-test.skip('Read specific drop-down value and print it', async({page}) => {
+test('Read specific drop-down value and print it', async({page}) => {
     await page.goto('https://letcode.in/dropdowns')
     const drpdwnvalues=page.locator('#lang');
     const values=await drpdwnvalues.allInnerTexts();
@@ -22,7 +22,7 @@ test.skip('Read specific drop-down value and print it', async({page}) => {
     await page.close();
 });
 
-test.skip('Select the apple using visible text', async({page}) => {
+test('Select the apple using visible text', async({page}) => {
     //this code will select a passed parameter value from the first drop down
     await page.goto('https://letcode.in/dropdowns');
     const dropdownelement=page.locator('#fruits');
@@ -34,7 +34,7 @@ test.skip('Select the apple using visible text', async({page}) => {
 });
 
 //multi select example
-test.skip('Select your super heros', async({page}) => {
+test('Select your super heros', async({page}) => {
     await page.goto('https://letcode.in/dropdowns');
     const dropdown=page.locator('#superheros');
    const selectvalue:string[]=['Aquaman','The Avengers','Batman'];
