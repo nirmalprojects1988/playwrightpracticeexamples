@@ -1,7 +1,7 @@
 import {test} from "@playwright/test"
 
 
-test.skip('Get place holder value by attribute',async ({page}) => {
+test('Get place holder value by attribute',async ({page}) => {
 
     await page.goto('https://letcode.in/edit');
    const placeholdevalue=await page.getByPlaceholder('Enter first & last name').getAttribute('placeholder');
@@ -12,7 +12,7 @@ test.skip('Get place holder value by attribute',async ({page}) => {
     
 });
 
-test.skip('Append a text and press keyboard tab', async({page}) => {
+test('Append a text and press keyboard tab', async({page}) => {
     await page.goto('https://letcode.in/edit');
       const secondTextbox = page.getByPlaceholder('Enter').nth(1);
       await secondTextbox.click();
@@ -26,14 +26,14 @@ test.skip('Append a text and press keyboard tab', async({page}) => {
        
 });
 
-test.skip('What is inside the text box', async({page}) => {
+test('What is inside the text box', async({page}) => {
     await page.goto('https://letcode.in/edit');
    let textinsidetextbox=await page.getByPlaceholder('Enter').nth(2).inputValue()
     console.log(`The input value within the text box is ${textinsidetextbox}`);
    await page.close();
     
 });
-test.skip('Clear the text', async({page}) => {
+test('Clear the text', async({page}) => {
     await page.goto('https://letcode.in/edit')
     console.log(`Before clearing text ${await page.getByPlaceholder('Enter').nth(3).inputValue()}`)
     await page.getByPlaceholder('Enter').nth(3).clear();
@@ -42,7 +42,7 @@ test.skip('Clear the text', async({page}) => {
     await page.close();
 
 });
-test.skip('Confirm edit field is disabled', async({page}) => {
+test('Confirm edit field is disabled', async({page}) => {
     await page.goto('https://letcode.in/edit');
 
   // Wait for the element with the 'disabled' class to appear

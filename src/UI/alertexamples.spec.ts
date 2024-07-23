@@ -1,6 +1,6 @@
 import{test,expect} from "@playwright/test"
 
-test.skip('Accept the Alert', async({page}) => {
+test('Accept the Alert', async({page}) => {
     page.on('dialog', async dialog => {
     console.log(dialog.message());
     dialog.accept();
@@ -11,7 +11,7 @@ test.skip('Accept the Alert', async({page}) => {
     await page.evaluate(() => alert('Hey! Welcome to LetCode'));
     await page.close();
 });
-test.skip('Dismiss the Alert & print the alert text', async({page}) => {
+test('Dismiss the Alert & print the alert text', async({page}) => {
     page.on('dialog',async dialog=>{
         console.log(dialog.message());
         dialog.dismiss();
@@ -22,7 +22,7 @@ test.skip('Dismiss the Alert & print the alert text', async({page}) => {
     await page.waitForLoadState();
     await page.close();
 });
-test.skip('Modern alert example', async({page}) => {
+test('Modern alert example', async({page}) => {
     await page.goto('https://letcode.in/alert')
     await page.getByText('Modern Alert',{exact:true}).click();
     await page.waitForLoadState();

@@ -1,6 +1,6 @@
 import { test } from "@playwright/test"
 
-test.skip('New Window example', async ({ page }) => {
+test('New Window example', async ({ page }) => {
     await page.goto('https://demoqa.com/browser-windows');
     const [newPage] = await Promise.all([
         page.waitForEvent('popup'),
