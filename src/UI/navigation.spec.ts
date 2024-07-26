@@ -1,6 +1,6 @@
 import { expect,test } from "@playwright/test";
 
-test.skip('open page and go back again', async({page}) => {
+test('open page and go back again', async({page}) => {
     await page.goto('https://letcode.in/buttons')
     await page.getByRole('button',{name:'Goto Home'}).click();
     await page.waitForLoadState();

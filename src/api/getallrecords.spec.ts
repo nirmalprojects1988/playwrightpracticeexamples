@@ -6,3 +6,4 @@ test('get user data', async({request}) => {
     console.log(resData)
     expect(response.status()).toBe(200)
 });
+

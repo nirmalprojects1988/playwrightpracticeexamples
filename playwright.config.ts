@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-
+import { OrtoniReportConfig } from 'ortoni-report';
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -10,6 +10,15 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+ const reportConfig: OrtoniReportConfig = {
+  logo: "path/logo.png",
+  authorName: "LetCode Koushik",
+  base64Image: false,
+  preferredTheme: "dark",
+  projectName: "Ortoni Demo Report",
+  testType: "Smoke"
+}
+
 export default defineConfig({
   timeout:60000,
   testDir: './src',
@@ -22,9 +31,11 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  //reporter: 'html',
+  reporter: [['ortoni-report', reportConfig], ['dot']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    screenshot:'only-on-failure',
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
